@@ -1,3 +1,4 @@
+import 'package:bmi_calculator/constants/colors.dart';
 import 'package:bmi_calculator/views/home/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -12,6 +13,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData.dark().copyWith(
+        primaryColor: kBackgroundColor,
+        scaffoldBackgroundColor: kBackgroundColor,
+      ),
       home: HomeScreen(),
     );
   }
