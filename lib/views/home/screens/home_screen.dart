@@ -1,6 +1,7 @@
 import 'package:bmi_calculator/constants/colors.dart';
 import 'package:bmi_calculator/constants/widgets/custom_button.dart';
 import 'package:bmi_calculator/views/home/widgets/custom_card.dart';
+import 'package:bmi_calculator/views/home/widgets/icon_content.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -25,35 +26,36 @@ class _HomeScreenState extends State<HomeScreen> {
             children: [
               customCard(
                 context: context,
-                child: Column(
-                  children: [
-                    // male icon and text
-                    Icon(Icons.male, size: 50),
-                    Text(
-                      'MALE',
-                    )
-                  ],
-                ),
+                child: iconContent(icon: Icons.male, iconText: 'MALE'),
               ),
               customCard(
                 context: context,
-                child: Container(),
+                child: iconContent(
+                  icon: Icons.female,
+                  iconText: 'FEMALE',
+                ),
               ),
             ],
           ),
           customCard(
             context: context,
-            child: Container(),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text('Height'),
+                Text('110Cm'),
+              ],
+            ),
           ),
           Row(
             children: [
               customCard(
                 context: context,
-                child: Container(),
+                child: Column(),
               ),
               customCard(
                 context: context,
-                child: Container(),
+                child: Column(),
               ),
             ],
           ),
