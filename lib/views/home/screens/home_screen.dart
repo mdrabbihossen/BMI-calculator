@@ -1,4 +1,5 @@
 import 'package:bmi_calculator/constants/colors.dart';
+import 'package:bmi_calculator/constants/widgets/custom_appBar.dart';
 import 'package:bmi_calculator/constants/widgets/custom_button.dart';
 import 'package:bmi_calculator/views/home/widgets/custom_card.dart';
 import 'package:bmi_calculator/views/home/widgets/icon_content.dart';
@@ -16,54 +17,71 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: kBackgroundColor,
-        title: Text('BMI Calculator'),
-      ),
+      appBar: appBar(),
       body: Column(
         children: [
           Row(
             children: [
-              customCard(
-                context: context,
-                child: iconContent(icon: Icons.male, iconText: 'MALE'),
-              ),
-              customCard(
-                context: context,
-                child: iconContent(
-                  icon: Icons.female,
-                  iconText: 'FEMALE',
+              Expanded(
+                child: GestureDetector(
+                  onTap: () {
+                    print('Male Tap');
+                  },
+                  child: customCard(
+                    context: context,
+                    child: iconContent(icon: Icons.male, iconText: 'MALE'),
+                  ),
                 ),
               ),
+              Expanded(
+                child: GestureDetector(
+                  onTap: () {
+                    print('Female Tapped');
+                  },
+                  child: customCard(
+                    context: context,
+                    child: iconContent(
+                      icon: Icons.female,
+                      iconText: 'FEMALE',
+                    ),
+                  ),
+                ),
+              )
             ],
           ),
-          customCard(
-            context: context,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text('Height'),
-                Text('110Cm'),
-              ],
+          Expanded(
+            child: customCard(
+              context: context,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text('Height'),
+                  Text('110Cm'),
+                ],
+              ),
             ),
           ),
           Row(
             children: [
-              customCard(
-                context: context,
-                child: Column(),
+              Expanded(
+                child: customCard(
+                  context: context,
+                  child: Container(),
+                ),
               ),
-              customCard(
-                context: context,
-                child: Column(),
+              Expanded(
+                child: customCard(
+                  context: context,
+                  child: Container(),
+                ),
               ),
             ],
           ),
           customButton(
             context: context,
-            text: 'Calculate Your BMI'.toUpperCase(),
+            text: 'CALCULATE YOUR BMI',
             onPressed: () {},
-          )
+          ),
         ],
       ),
     );

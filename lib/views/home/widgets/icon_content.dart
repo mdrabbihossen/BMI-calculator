@@ -5,7 +5,10 @@ const labelTextStyle = TextStyle(
   color: Color(0xff808e98),
 );
 
-Widget iconContent({required IconData icon, required String iconText}) =>
+Widget iconContent({
+  required IconData icon,
+  required String iconText,
+}) =>
     Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
