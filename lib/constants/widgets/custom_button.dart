@@ -7,7 +7,7 @@ Widget customButton(
         required BuildContext context}) =>
     ElevatedButton(
       style: ElevatedButton.styleFrom(
-        primary: Constants().customButtonColor,
+        primary: Constants().kCustomButtonColor,
         elevation: 0,
         minimumSize: Size(
           double.infinity,

@@ -34,8 +34,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: customCard(
                   onPressed: () => setState(() => selectedGender = Gender.male),
                   color: selectedGender == Gender.male
-                      ? Constants().activeCardColor
-                      : Constants().inactiveCardColor,
+                      ? Constants().kActiveCardColor
+                      : Constants().kInactiveCardColor,
                   context: context,
                   child: iconContent(
                     icon: Icons.male,
@@ -44,7 +44,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             color: Colors.white,
                             fontSize: 18,
                           )
-                        : Constants().labelTextStyle,
+                        : Constants().kLabelTextStyle,
                     iconText: 'MALE',
                     iconColor: selectedGender == Gender.male
                         ? Colors.white
@@ -57,8 +57,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   onPressed: () =>
                       setState(() => selectedGender = Gender.female),
                   color: selectedGender == Gender.female
-                      ? Constants().activeCardColor
-                      : Constants().inactiveCardColor,
+                      ? Constants().kActiveCardColor
+                      : Constants().kInactiveCardColor,
                   context: context,
                   child: iconContent(
                     icon: Icons.female,
@@ -71,7 +71,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             color: Colors.white,
                             fontSize: 18,
                           )
-                        : Constants().labelTextStyle,
+                        : Constants().kLabelTextStyle,
                   ),
                 ),
               )
@@ -82,14 +82,14 @@ class _HomeScreenState extends State<HomeScreen> {
           // height part
           Expanded(
             child: customCard(
-              color: Constants().activeCardColor,
+              color: Constants().kActiveCardColor,
               context: context,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
                     'HEIGHT',
-                    style: Constants().labelTextStyle,
+                    style: Constants().kLabelTextStyle,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -105,7 +105,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                       Text(
                         'cm',
-                        style: Constants().labelTextStyle,
+                        style: Constants().kLabelTextStyle,
                       ),
                     ],
                   ),
@@ -124,14 +124,14 @@ class _HomeScreenState extends State<HomeScreen> {
             children: [
               Expanded(
                 child: customCard(
-                  color: Constants().activeCardColor,
+                  color: Constants().kActiveCardColor,
                   context: context,
                   child: Container(),
                 ),
               ),
               Expanded(
                 child: customCard(
-                  color: Constants().activeCardColor,
+                  color: Constants().kActiveCardColor,
                   context: context,
                   child: Container(),
                 ),
