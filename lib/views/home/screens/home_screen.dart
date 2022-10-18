@@ -1,6 +1,7 @@
 import 'package:bmi_calculator/constants/constants.dart';
 import 'package:bmi_calculator/constants/widgets/custom_appBar.dart';
 import 'package:bmi_calculator/constants/widgets/custom_button.dart';
+import 'package:bmi_calculator/views/home/widgets/add_remove_button.dart';
 import 'package:bmi_calculator/views/home/widgets/custom_card.dart';
 import 'package:bmi_calculator/views/home/widgets/icon_content.dart';
 import 'package:flutter/material.dart';
@@ -19,6 +20,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   Gender? selectedGender;
+  int sliderValue = 180;
 
   @override
   Widget build(BuildContext context) {
@@ -27,55 +29,72 @@ class _HomeScreenState extends State<HomeScreen> {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // Gender selection starts here
-          Row(
-            children: [
-              Expanded(
-                child: customCard(
-                  onPressed: () => setState(() => selectedGender = Gender.male),
-                  color: selectedGender == Gender.male
-                      ? Constants().kActiveCardColor
-                      : Constants().kInactiveCardColor,
-                  context: context,
-                  child: iconContent(
-                    icon: Icons.male,
-                    textStyle: selectedGender == Gender.male
-                        ? TextStyle(
-                            color: Colors.white,
-                            fontSize: 18,
-                          )
-                        : Constants().kLabelTextStyle,
-                    iconText: 'MALE',
-                    iconColor: selectedGender == Gender.male
-                        ? Colors.white
-                        : Color(0xff808e98),
-                  ),
-                ),
+          Padding(
+            padding: const EdgeInsets.only(
+              left: 18.0,
+              top: 15,
+            ),
+            child: Text(
+              'Select Your Gender',
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                color: Color(0xff8d8e98),
               ),
-              Expanded(
-                child: customCard(
-                  onPressed: () =>
-                      setState(() => selectedGender = Gender.female),
-                  color: selectedGender == Gender.female
-                      ? Constants().kActiveCardColor
-                      : Constants().kInactiveCardColor,
-                  context: context,
-                  child: iconContent(
-                    icon: Icons.female,
-                    iconColor: selectedGender == Gender.female
-                        ? Colors.white
-                        : Color(0xff808e98),
-                    iconText: 'FEMALE',
-                    textStyle: selectedGender == Gender.female
-                        ? TextStyle(
-                            color: Colors.white,
-                            fontSize: 18,
-                          )
-                        : Constants().kLabelTextStyle,
+            ),
+          ),
+          // Gender selection starts here
+          Expanded(
+            child: Row(
+              children: [
+                Expanded(
+                  child: customCard(
+                    onPressed: () =>
+                        setState(() => selectedGender = Gender.male),
+                    color: selectedGender == Gender.male
+                        ? Constants().kActiveCardColor
+                        : Constants().kInactiveCardColor,
+                    context: context,
+                    child: iconContent(
+                      icon: Icons.male,
+                      textStyle: selectedGender == Gender.male
+                          ? TextStyle(
+                              color: Colors.white,
+                              fontSize: 18,
+                            )
+                          : Constants().kLabelTextStyle,
+                      iconText: 'MALE',
+                      iconColor: selectedGender == Gender.male
+                          ? Colors.white
+                          : Color(0xff808e98),
+                    ),
                   ),
                 ),
-              )
-            ],
+                Expanded(
+                  child: customCard(
+                    onPressed: () =>
+                        setState(() => selectedGender = Gender.female),
+                    color: selectedGender == Gender.female
+                        ? Constants().kActiveCardColor
+                        : Constants().kInactiveCardColor,
+                    context: context,
+                    child: iconContent(
+                      icon: Icons.female,
+                      iconColor: selectedGender == Gender.female
+                          ? Colors.white
+                          : Color(0xff808e98),
+                      iconText: 'FEMALE',
+                      textStyle: selectedGender == Gender.female
+                          ? TextStyle(
+                              color: Colors.white,
+                              fontSize: 18,
+                            )
+                          : Constants().kLabelTextStyle,
+                    ),
+                  ),
+                )
+              ],
+            ),
           ),
           // Gender selection ends here
 
@@ -97,7 +116,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     textBaseline: TextBaseline.alphabetic,
                     children: [
                       Text(
-                        '180',
+                        '${sliderValue}',
                         style: TextStyle(
                           fontSize: 50,
                           fontWeight: FontWeight.w900,
@@ -110,33 +129,93 @@ class _HomeScreenState extends State<HomeScreen> {
                     ],
                   ),
                   Slider(
-                    value: 180,
-                    min: 120,
-                    max: 220,
-                    onChanged: (value) {},
+                    value: sliderValue.toDouble(),
+                    min: 120.0,
+                    max: 220.0,
+                    label: '$sliderValue',
+                    inactiveColor: Color(0xff8d8e98),
+                    divisions: 6,
+                    activeColor: Color(0xffeb1555),
+                    onChanged: (value) {
+                      setState(() {
+                        sliderValue = value.round();
+                      });
+                    },
                   ),
                 ],
               ),
             ),
           ),
           // height part ends here
-          Row(
-            children: [
-              Expanded(
-                child: customCard(
-                  color: Constants().kActiveCardColor,
-                  context: context,
-                  child: Container(),
+          Expanded(
+            child: Row(
+              children: [
+                Expanded(
+                  child: customCard(
+                    color: Constants().kActiveCardColor,
+                    context: context,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          'WEIGHT',
+                          style: Constants().kLabelTextStyle,
+                        ),
+                        Text(
+                          '60',
+                          style: TextStyle(
+                            fontSize: 50,
+                          ),
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            increaseDecrease(
+                              icon: Icons.remove,
+                            ),
+                            increaseDecrease(
+                              icon: Icons.add,
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
                 ),
-              ),
-              Expanded(
-                child: customCard(
-                  color: Constants().kActiveCardColor,
-                  context: context,
-                  child: Container(),
+                Expanded(
+                  child: customCard(
+                    color: Constants().kActiveCardColor,
+                    context: context,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          'AGE',
+                          style: Constants().kLabelTextStyle,
+                        ),
+                        Text(
+                          '20',
+                          style: TextStyle(
+                            fontSize: 50,
+                          ),
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            increaseDecrease(
+                              icon: Icons.remove,
+                            ),
+                            increaseDecrease(
+                              icon: Icons.add,
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
           customButton(
             context: context,
