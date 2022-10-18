@@ -21,6 +21,8 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   Gender? selectedGender;
   int sliderValue = 180;
+  int weightValue = 60;
+  int ageValue = 20;
 
   @override
   Widget build(BuildContext context) {
@@ -161,7 +163,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           style: Constants().kLabelTextStyle,
                         ),
                         Text(
-                          '60',
+                          '$weightValue',
                           style: TextStyle(
                             fontSize: 50,
                           ),
@@ -170,9 +172,19 @@ class _HomeScreenState extends State<HomeScreen> {
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             increaseDecrease(
+                              onPress: () {
+                                setState(() {
+                                  weightValue--;
+                                });
+                              },
                               icon: Icons.remove,
                             ),
                             increaseDecrease(
+                              onPress: () {
+                                setState(() {
+                                  weightValue++;
+                                });
+                              },
                               icon: Icons.add,
                             ),
                           ],
@@ -193,7 +205,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           style: Constants().kLabelTextStyle,
                         ),
                         Text(
-                          '20',
+                          '$ageValue',
                           style: TextStyle(
                             fontSize: 50,
                           ),
@@ -202,9 +214,19 @@ class _HomeScreenState extends State<HomeScreen> {
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             increaseDecrease(
+                              onPress: () {
+                                setState(() {
+                                  ageValue--;
+                                });
+                              },
                               icon: Icons.remove,
                             ),
                             increaseDecrease(
+                              onPress: () {
+                                setState(() {
+                                  ageValue++;
+                                });
+                              },
                               icon: Icons.add,
                             ),
                           ],
