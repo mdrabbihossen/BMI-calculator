@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 
-const labelTextStyle = TextStyle(
-  fontSize: 18,
-  color: Color(0xff808e98),
-);
+
 
 Widget iconContent({
   required IconData icon,

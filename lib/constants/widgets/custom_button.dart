@@ -1,4 +1,4 @@
-import 'package:bmi_calculator/constants/colors.dart';
+import 'package:bmi_calculator/constants/constants.dart';
 import 'package:flutter/material.dart';
 
 Widget customButton(
@@ -7,7 +7,7 @@ Widget customButton(
         required BuildContext context}) =>
     ElevatedButton(
       style: ElevatedButton.styleFrom(
-        primary: customButtonColor,
+        primary: Constants().customButtonColor,
         elevation: 0,
         minimumSize: Size(
           double.infinity,
