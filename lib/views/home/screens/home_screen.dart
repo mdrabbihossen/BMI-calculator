@@ -18,8 +18,6 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  Color maleCardColor = inactiveCardColor;
-  Color femaleCardColor = inactiveCardColor;
   Gender? selectedGender;
 
   @override
@@ -31,28 +29,47 @@ class _HomeScreenState extends State<HomeScreen> {
           Row(
             children: [
               Expanded(
-                child: GestureDetector(
-                  onTap: () {},
-                  child: customCard(
-                    color: maleCardColor,
-                    context: context,
-                    child: iconContent(
-                      icon: Icons.male,
-                      iconText: 'MALE',
-                    ),
+                child: customCard(
+                  onPressed: () => setState(() => selectedGender = Gender.male),
+                  color: selectedGender == Gender.male
+                      ? activeCardColor
+                      : inactiveCardColor,
+                  context: context,
+                  child: iconContent(
+                    icon: Icons.male,
+                    textStyle: selectedGender == Gender.male
+                        ? TextStyle(
+                            color: Colors.white,
+                            fontSize: 18,
+                          )
+                        : labelTextStyle,
+                    iconText: 'MALE',
+                    iconColor: selectedGender == Gender.male
+                        ? Colors.white
+                        : Color(0xff808e98),
                   ),
                 ),
               ),
               Expanded(
-                child: GestureDetector(
-                  onTap: () {},
-                  child: customCard(
-                    color: femaleCardColor,
-                    context: context,
-                    child: iconContent(
-                      icon: Icons.female,
-                      iconText: 'FEMALE',
-                    ),
+                child: customCard(
+                  onPressed: () =>
+                      setState(() => selectedGender = Gender.female),
+                  color: selectedGender == Gender.female
+                      ? activeCardColor
+                      : inactiveCardColor,
+                  context: context,
+                  child: iconContent(
+                    icon: Icons.female,
+                    iconColor: selectedGender == Gender.female
+                        ? Colors.white
+                        : Color(0xff808e98),
+                    iconText: 'FEMALE',
+                    textStyle: selectedGender == Gender.female
+                        ? TextStyle(
+                            color: Colors.white,
+                            fontSize: 18,
+                          )
+                        : labelTextStyle,
                   ),
                 ),
               )

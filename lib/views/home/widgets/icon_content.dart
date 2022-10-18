@@ -8,6 +8,8 @@ const labelTextStyle = TextStyle(
 Widget iconContent({
   required IconData icon,
   required String iconText,
+  TextStyle? textStyle,
+  Color? iconColor,
 }) =>
     Column(
       mainAxisAlignment: MainAxisAlignment.center,
@@ -15,10 +17,11 @@ Widget iconContent({
         Icon(
           icon,
           size: 70,
+          color: iconColor,
         ),
         Text(
           iconText,
-          style: labelTextStyle,
+          style: textStyle,
         ),
       ],
     );
