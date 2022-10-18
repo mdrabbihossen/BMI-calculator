@@ -118,7 +118,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       Text(
                         '${sliderValue}',
                         style: TextStyle(
-                          fontSize: 50,
+                          fontSize: 45,
                           fontWeight: FontWeight.w900,
                         ),
                       ),
@@ -134,7 +134,6 @@ class _HomeScreenState extends State<HomeScreen> {
                     max: 220.0,
                     label: '$sliderValue',
                     inactiveColor: Color(0xff8d8e98),
-                    divisions: 6,
                     activeColor: Color(0xffeb1555),
                     onChanged: (value) {
                       setState(() {
