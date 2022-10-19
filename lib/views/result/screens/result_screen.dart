@@ -12,8 +12,7 @@ class ResultScreen extends StatelessWidget {
     return Scaffold(
       appBar: appBar,
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.stretch,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
             padding: const EdgeInsets.only(
@@ -47,7 +46,7 @@ class ResultScreen extends StatelessWidget {
                     '18.3',
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                      fontSize: 100,
+                      fontSize: 80,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -74,7 +73,6 @@ class ResultScreen extends StatelessWidget {
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 18,
-                      letterSpacing: 1,
                       fontWeight: FontWeight.w600,
                     ),
                   ),

@@ -1,5 +1,6 @@
 import 'package:bmi_calculator/constants/constants.dart';
 import 'package:bmi_calculator/views/home/screens/home_screen.dart';
+import 'package:bmi_calculator/views/result/screens/result_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -23,7 +24,11 @@ class MyApp extends StatelessWidget {
           overlayColor: Color(0x29eb1555),
         ),
       ),
-      home: HomeScreen(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => HomeScreen(),
+        '/result-screen': (context) => ResultScreen(),
+      },
     );
   }
 }

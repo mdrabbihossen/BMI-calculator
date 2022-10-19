@@ -238,12 +238,7 @@ class _HomeScreenState extends State<HomeScreen> {
             context: context,
             text: 'CALCULATE YOUR BMI',
             onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => ResultScreen(),
-                ),
-              );
+              Navigator.pushNamed(context, '/result-screen');
             },
           ),
         ],
