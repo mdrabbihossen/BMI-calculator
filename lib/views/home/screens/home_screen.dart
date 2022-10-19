@@ -57,7 +57,6 @@ class _HomeScreenState extends State<HomeScreen> {
                     color: selectedGender == Gender.male
                         ? Constants().kActiveCardColor
                         : Constants().kInactiveCardColor,
-
                     child: iconContent(
                       icon: Icons.male,
                       textStyle: selectedGender == Gender.male
@@ -80,7 +79,6 @@ class _HomeScreenState extends State<HomeScreen> {
                     color: selectedGender == Gender.female
                         ? Constants().kActiveCardColor
                         : Constants().kInactiveCardColor,
-
                     child: iconContent(
                       icon: Icons.female,
                       iconColor: selectedGender == Gender.female
@@ -105,7 +103,6 @@ class _HomeScreenState extends State<HomeScreen> {
           Expanded(
             child: customCard(
               color: Constants().kActiveCardColor,
-
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -155,7 +152,6 @@ class _HomeScreenState extends State<HomeScreen> {
                 Expanded(
                   child: customCard(
                     color: Constants().kActiveCardColor,
-
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -197,7 +193,6 @@ class _HomeScreenState extends State<HomeScreen> {
                 Expanded(
                   child: customCard(
                     color: Constants().kActiveCardColor,
-
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
