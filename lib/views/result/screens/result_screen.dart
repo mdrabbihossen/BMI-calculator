@@ -5,7 +5,16 @@ import 'package:bmi_calculator/constants/widgets/custom_card.dart';
 import 'package:flutter/material.dart';
 
 class ResultScreen extends StatelessWidget {
-  const ResultScreen({Key? key}) : super(key: key);
+  final String bmiResult;
+  final String resultText;
+  final String interpretation;
+
+  const ResultScreen({
+    Key? key,
+    required this.bmiResult,
+    required this.resultText,
+    required this.interpretation,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +44,7 @@ class ResultScreen extends StatelessWidget {
                 children: [
                   Spacer(),
                   Text(
-                    'Normal',
+                    '$resultText',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 22,
@@ -43,7 +52,7 @@ class ResultScreen extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    '18.3',
+                    '$bmiResult',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 80,
@@ -69,7 +78,7 @@ class ResultScreen extends StatelessWidget {
                   ),
                   SizedBox(height: 15),
                   Text(
-                    'You have a normal body weight. Good job!',
+                    '$interpretation',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 18,

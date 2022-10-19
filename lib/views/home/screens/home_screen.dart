@@ -1,6 +1,7 @@
 import 'package:bmi_calculator/constants/constants.dart';
 import 'package:bmi_calculator/constants/widgets/custom_appBar.dart';
 import 'package:bmi_calculator/constants/widgets/custom_button.dart';
+import 'package:bmi_calculator/model/bmi_calculator_model.dart';
 import 'package:bmi_calculator/views/home/widgets/increase_decreas_btn.dart';
 import 'package:bmi_calculator/constants/widgets/custom_card.dart';
 import 'package:bmi_calculator/views/home/widgets/icon_content.dart';
@@ -238,7 +239,18 @@ class _HomeScreenState extends State<HomeScreen> {
             context: context,
             text: 'CALCULATE YOUR BMI',
             onPressed: () {
-              Navigator.pushNamed(context, '/result-screen');
+              CalculatorModel calc =
+                  CalculatorModel(height: sliderValue, weight: weightValue);
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => ResultScreen(
+                    bmiResult: calc.calculateBMI(),
+                    resultText: calc.getResult(),
+                    interpretation: calc.getInterpretation(),
+                  ),
+                ),
+              );
             },
           ),
         ],

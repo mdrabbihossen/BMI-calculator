@@ -24,11 +24,7 @@ class MyApp extends StatelessWidget {
           overlayColor: Color(0x29eb1555),
         ),
       ),
-      initialRoute: '/',
-      routes: {
-        '/': (context) => HomeScreen(),
-        '/result-screen': (context) => ResultScreen(),
-      },
+      home: HomeScreen(),
     );
   }
 }
