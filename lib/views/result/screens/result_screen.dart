@@ -112,7 +112,7 @@ class ResultScreen extends StatelessWidget {
               Navigator.pop(context);
             },
             context: context,
-          )
+          ),
         ],
       ),
     );

@@ -1,7 +1,7 @@
 import 'package:bmi_calculator/constants/constants.dart';
 import 'package:bmi_calculator/constants/widgets/custom_appBar.dart';
 import 'package:bmi_calculator/constants/widgets/custom_button.dart';
-import 'package:bmi_calculator/views/home/widgets/add_remove_button.dart';
+import 'package:bmi_calculator/views/home/widgets/increase_decreas_btn.dart';
 import 'package:bmi_calculator/constants/widgets/custom_card.dart';
 import 'package:bmi_calculator/views/home/widgets/icon_content.dart';
 import 'package:bmi_calculator/views/result/screens/result_screen.dart';
