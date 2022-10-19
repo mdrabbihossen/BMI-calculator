@@ -2,8 +2,9 @@ import 'package:bmi_calculator/constants/constants.dart';
 import 'package:bmi_calculator/constants/widgets/custom_appBar.dart';
 import 'package:bmi_calculator/constants/widgets/custom_button.dart';
 import 'package:bmi_calculator/views/home/widgets/add_remove_button.dart';
-import 'package:bmi_calculator/views/home/widgets/custom_card.dart';
+import 'package:bmi_calculator/constants/widgets/custom_card.dart';
 import 'package:bmi_calculator/views/home/widgets/icon_content.dart';
+import 'package:bmi_calculator/views/result/screens/result_screen.dart';
 import 'package:flutter/material.dart';
 
 enum Gender {
@@ -27,7 +28,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: appBar(),
+      appBar: appBar,
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -56,7 +57,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     color: selectedGender == Gender.male
                         ? Constants().kActiveCardColor
                         : Constants().kInactiveCardColor,
-                    context: context,
+
                     child: iconContent(
                       icon: Icons.male,
                       textStyle: selectedGender == Gender.male
@@ -79,7 +80,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     color: selectedGender == Gender.female
                         ? Constants().kActiveCardColor
                         : Constants().kInactiveCardColor,
-                    context: context,
+
                     child: iconContent(
                       icon: Icons.female,
                       iconColor: selectedGender == Gender.female
@@ -104,7 +105,7 @@ class _HomeScreenState extends State<HomeScreen> {
           Expanded(
             child: customCard(
               color: Constants().kActiveCardColor,
-              context: context,
+
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -154,7 +155,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 Expanded(
                   child: customCard(
                     color: Constants().kActiveCardColor,
-                    context: context,
+
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -196,7 +197,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 Expanded(
                   child: customCard(
                     color: Constants().kActiveCardColor,
-                    context: context,
+
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -241,7 +242,14 @@ class _HomeScreenState extends State<HomeScreen> {
           customButton(
             context: context,
             text: 'CALCULATE YOUR BMI',
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => ResultScreen(),
+                ),
+              );
+            },
           ),
         ],
       ),

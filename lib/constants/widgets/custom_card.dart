@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 Widget customCard({
-  required BuildContext context,
   required Widget child,
   required Color color,
   VoidCallback? onPressed,
