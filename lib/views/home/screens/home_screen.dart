@@ -174,7 +174,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             increaseDecrease(
                               onPress: () {
                                 setState(() {
-                                  weightValue--;
+                                  weightValue > 0 ? weightValue-- : weightValue;
                                 });
                               },
                               icon: Icons.remove,
@@ -216,7 +216,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             increaseDecrease(
                               onPress: () {
                                 setState(() {
-                                  ageValue--;
+                                  ageValue > 0 ? ageValue-- : ageValue;
                                 });
                               },
                               icon: Icons.remove,
