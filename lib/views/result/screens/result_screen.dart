@@ -39,7 +39,7 @@ class ResultScreen extends StatelessWidget {
           // result card starts
           Expanded(
             child: customCard(
-              color: Constants().kActiveCardColor,
+              color:kActiveCardColor,
               child: Column(
                 children: [
                   Spacer(),
@@ -62,8 +62,7 @@ class ResultScreen extends StatelessWidget {
                   Text(
                     'Normal BMI range:',
                     textAlign: TextAlign.center,
-                    style: Constants()
-                        .kLabelTextStyle
+                    style:                        kLabelTextStyle
                         .copyWith(letterSpacing: 1.2),
                   ),
                   SizedBox(height: 10),
@@ -98,8 +97,8 @@ class ResultScreen extends StatelessWidget {
                         ),
                       ),
                       style: TextButton.styleFrom(
-                        primary: Colors.white,
-                        backgroundColor: Constants().kInactiveCardColor,
+                        foregroundColor: Colors.white,
+                        backgroundColor: kInactiveCardColor,
                         minimumSize: Size(
                           double.infinity,
                           MediaQuery.of(context).size.height * 0.09,

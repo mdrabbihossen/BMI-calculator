@@ -56,8 +56,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     onPressed: () =>
                         setState(() => selectedGender = Gender.male),
                     color: selectedGender == Gender.male
-                        ? Constants().kActiveCardColor
-                        : Constants().kInactiveCardColor,
+                        ? kActiveCardColor
+                        :kInactiveCardColor,
                     child: iconContent(
                       icon: Icons.male,
                       textStyle: selectedGender == Gender.male
@@ -65,7 +65,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               color: Colors.white,
                               fontSize: 18,
                             )
-                          : Constants().kLabelTextStyle,
+                          : kLabelTextStyle,
                       iconText: 'MALE',
                       iconColor: selectedGender == Gender.male
                           ? Colors.white
@@ -78,8 +78,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     onPressed: () =>
                         setState(() => selectedGender = Gender.female),
                     color: selectedGender == Gender.female
-                        ? Constants().kActiveCardColor
-                        : Constants().kInactiveCardColor,
+                        ? kActiveCardColor
+                        : kInactiveCardColor,
                     child: iconContent(
                       icon: Icons.female,
                       iconColor: selectedGender == Gender.female
@@ -91,7 +91,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               color: Colors.white,
                               fontSize: 18,
                             )
-                          : Constants().kLabelTextStyle,
+                          : kLabelTextStyle,
                     ),
                   ),
                 )
@@ -103,13 +103,13 @@ class _HomeScreenState extends State<HomeScreen> {
           // height part
           Expanded(
             child: customCard(
-              color: Constants().kActiveCardColor,
+              color: kActiveCardColor,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
                     'HEIGHT',
-                    style: Constants().kLabelTextStyle,
+                    style: kLabelTextStyle,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -125,7 +125,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                       Text(
                         'cm',
-                        style: Constants().kLabelTextStyle,
+                        style: kLabelTextStyle,
                       ),
                     ],
                   ),
@@ -152,13 +152,13 @@ class _HomeScreenState extends State<HomeScreen> {
               children: [
                 Expanded(
                   child: customCard(
-                    color: Constants().kActiveCardColor,
+                    color:kActiveCardColor,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
                           'WEIGHT',
-                          style: Constants().kLabelTextStyle,
+                          style: kLabelTextStyle,
                         ),
                         Text(
                           '$weightValue',
@@ -193,13 +193,13 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 Expanded(
                   child: customCard(
-                    color: Constants().kActiveCardColor,
+                    color: kActiveCardColor,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
                           'AGE',
-                          style: Constants().kLabelTextStyle,
+                          style: kLabelTextStyle,
                         ),
                         Text(
                           '$ageValue',

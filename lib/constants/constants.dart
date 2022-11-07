@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
-class Constants {
+
+  
+
   // colors
   Color kBackgroundColor = Color(0xff0a0e21);
   Color kActiveCardColor = Color(0xff1d1e33);
@@ -12,4 +14,4 @@ class Constants {
     fontSize: 18,
     color: Color(0xff808e98),
   );
-}
+

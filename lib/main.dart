@@ -16,8 +16,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark().copyWith(
-        primaryColor: Constants().kBackgroundColor,
-        scaffoldBackgroundColor: Constants().kBackgroundColor,
+        primaryColor:kBackgroundColor,
+        scaffoldBackgroundColor: kBackgroundColor,
         sliderTheme: SliderTheme.of(context).copyWith(
           thumbShape: RoundSliderThumbShape(enabledThumbRadius: 8),
           overlayShape: RoundSliderOverlayShape(overlayRadius: 20),

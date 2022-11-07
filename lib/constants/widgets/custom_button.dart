@@ -8,7 +8,7 @@ Widget customButton({
 }) =>
     ElevatedButton(
       style: ElevatedButton.styleFrom(
-        primary: Constants().kCustomButtonColor,
+        backgroundColor: kCustomButtonColor,
         elevation: 0,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.zero,
