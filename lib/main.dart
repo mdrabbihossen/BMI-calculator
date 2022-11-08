@@ -1,6 +1,6 @@
 import 'package:bmi_calculator/constants/constants.dart';
 import 'package:bmi_calculator/views/home/screens/home_screen.dart';
-import 'package:bmi_calculator/views/result/screens/result_screen.dart';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark().copyWith(
-        primaryColor:kBackgroundColor,
+        primaryColor: kBackgroundColor,
         scaffoldBackgroundColor: kBackgroundColor,
         sliderTheme: SliderTheme.of(context).copyWith(
           thumbShape: RoundSliderThumbShape(enabledThumbRadius: 8),
