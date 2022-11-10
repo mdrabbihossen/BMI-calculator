@@ -6,9 +6,9 @@ Widget increaseDecrease({
 }) =>
     RawMaterialButton(
       onPressed: onPress,
-      elevation: 6.0,
+      
       shape: CircleBorder(),
-      fillColor: Color(0xff4c4f5e),
+      fillColor: Color(0xffFF80B3),
       constraints: BoxConstraints.tightFor(
         width: 40,
         height: 40,

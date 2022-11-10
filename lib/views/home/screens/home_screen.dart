@@ -8,11 +8,6 @@ import 'package:bmi_calculator/views/home/widgets/icon_content.dart';
 import 'package:bmi_calculator/views/result/screens/result_screen.dart';
 import 'package:flutter/material.dart';
 
-enum Gender {
-  male,
-  female,
-}
-
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
@@ -21,7 +16,6 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  Gender? selectedGender;
   int sliderValue = 180;
   int weightValue = 60;
   int ageValue = 20;
@@ -39,11 +33,11 @@ class _HomeScreenState extends State<HomeScreen> {
               top: 15,
             ),
             child: Text(
-              'Select Your Gender',
+              'Gender',
               style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
-                color: Color(0xff8d8e98),
+                color: Color(0xffFF3880),
               ),
             ),
           ),
@@ -53,48 +47,19 @@ class _HomeScreenState extends State<HomeScreen> {
               children: [
                 Expanded(
                   child: customCard(
-                    onPressed: () =>
-                        setState(() => selectedGender = Gender.male),
-                    color: selectedGender == Gender.male
-                        ? kActiveCardColor
-                        :kInactiveCardColor,
+                    onPressed: () => {},
+                    color: kInactiveCardColor,
                     child: iconContent(
-                      icon: Icons.male,
-                      textStyle: selectedGender == Gender.male
-                          ? TextStyle(
-                              color: Colors.white,
-                              fontSize: 18,
-                            )
-                          : kLabelTextStyle,
-                      iconText: 'MALE',
-                      iconColor: selectedGender == Gender.male
-                          ? Colors.white
-                          : Color(0xff808e98),
+                      icon: Icons.female,
+                      iconColor: Color(0xff808e98),
+                      iconText: 'FEMALE',
+                      textStyle: TextStyle(
+                        color: Color(0xff808e98),
+                        fontSize: 18,
+                      ),
                     ),
                   ),
                 ),
-                Expanded(
-                  child: customCard(
-                    onPressed: () =>
-                        setState(() => selectedGender = Gender.female),
-                    color: selectedGender == Gender.female
-                        ? kActiveCardColor
-                        : kInactiveCardColor,
-                    child: iconContent(
-                      icon: Icons.female,
-                      iconColor: selectedGender == Gender.female
-                          ? Colors.white
-                          : Color(0xff808e98),
-                      iconText: 'FEMALE',
-                      textStyle: selectedGender == Gender.female
-                          ? TextStyle(
-                              color: Colors.white,
-                              fontSize: 18,
-                            )
-                          : kLabelTextStyle,
-                    ),
-                  ),
-                )
               ],
             ),
           ),
@@ -121,6 +86,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         style: TextStyle(
                           fontSize: 45,
                           fontWeight: FontWeight.w900,
+                          color: kPrimaryColor,
                         ),
                       ),
                       Text(
@@ -134,8 +100,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     min: 120.0,
                     max: 220.0,
                     label: '$sliderValue',
-                    inactiveColor: Color(0xff8d8e98),
-                    activeColor: Color(0xffeb1555),
+                    inactiveColor: Colors.white,
+                    activeColor: kPrimaryColor,
                     onChanged: (value) {
                       setState(() {
                         sliderValue = value.round();
@@ -152,7 +118,7 @@ class _HomeScreenState extends State<HomeScreen> {
               children: [
                 Expanded(
                   child: customCard(
-                    color:kActiveCardColor,
+                    color: kActiveCardColor,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -160,11 +126,23 @@ class _HomeScreenState extends State<HomeScreen> {
                           'WEIGHT',
                           style: kLabelTextStyle,
                         ),
-                        Text(
-                          '$weightValue',
-                          style: TextStyle(
-                            fontSize: 50,
-                          ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.baseline,
+                          textBaseline: TextBaseline.alphabetic,
+                          children: [
+                            Text(
+                              '$weightValue',
+                              style: TextStyle(
+                                fontSize: 50,
+                                color: kPrimaryColor,
+                              ),
+                            ),
+                            Text(
+                              'kg',
+                              style: kLabelTextStyle,
+                            ),
+                          ],
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -205,6 +183,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           '$ageValue',
                           style: TextStyle(
                             fontSize: 50,
+                            color: kPrimaryColor,
                           ),
                         ),
                         Row(
@@ -246,7 +225,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 MaterialPageRoute(
                   builder: (context) => ResultScreen(
                     bmiResult: calc.calculateBMI(),
-                    resultText: calc.getResult(),
+                  
                     interpretation: calc.getInterpretation(),
                   ),
                 ),

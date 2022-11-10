@@ -6,13 +6,12 @@ import 'package:flutter/material.dart';
 
 class ResultScreen extends StatelessWidget {
   final String bmiResult;
-  final String resultText;
+
   final String interpretation;
 
   const ResultScreen({
     Key? key,
     required this.bmiResult,
-    required this.resultText,
     required this.interpretation,
   }) : super(key: key);
 
@@ -29,50 +28,29 @@ class ResultScreen extends StatelessWidget {
               top: 15,
             ),
             child: Text(
-              'Your Result',
+              'Your Result:',
               style: TextStyle(
-                  fontSize: 40,
-                  fontWeight: FontWeight.bold,
-                  letterSpacing: 1.2),
+                fontSize: 40,
+                color: Color(0xffFF3880),
+                fontWeight: FontWeight.bold,
+                letterSpacing: 1.2,
+              ),
             ),
           ),
           // result card starts
           Expanded(
             child: customCard(
-              color:kActiveCardColor,
+              color: kActiveCardColor,
               child: Column(
                 children: [
                   Spacer(),
-                  Text(
-                    '$resultText',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: 22,
-                      color: Colors.green,
-                    ),
-                  ),
                   Text(
                     '$bmiResult',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 80,
+                      color: Color(0xffFF3880),
                       fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  Text(
-                    'Normal BMI range:',
-                    textAlign: TextAlign.center,
-                    style:                        kLabelTextStyle
-                        .copyWith(letterSpacing: 1.2),
-                  ),
-                  SizedBox(height: 10),
-                  Text(
-                    '18.5 - 25 kg/m2',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: 18,
-                      letterSpacing: 1.2,
-                      fontWeight: FontWeight.w600,
                     ),
                   ),
                   SizedBox(height: 15),
@@ -81,6 +59,7 @@ class ResultScreen extends StatelessWidget {
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 18,
+                      color: Colors.green,
                       fontWeight: FontWeight.w600,
                     ),
                   ),
@@ -94,11 +73,11 @@ class ResultScreen extends StatelessWidget {
                         'Save Result',
                         style: TextStyle(
                           fontSize: 20,
+                          color: Colors.white,
                         ),
                       ),
                       style: TextButton.styleFrom(
-                        foregroundColor: Colors.white,
-                        backgroundColor: kInactiveCardColor,
+                        backgroundColor: Color(0xffFF80B3),
                         minimumSize: Size(
                           double.infinity,
                           MediaQuery.of(context).size.height * 0.09,

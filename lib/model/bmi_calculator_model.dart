@@ -17,26 +17,17 @@ class CalculatorModel {
   }
 
 // calculate bmi ends here
-// get result
-  String getResult() {
-    if (_bmi! >= 25) {
-      return 'Overweight';
-    } else if (_bmi! > 18.5) {
-      return 'Normal';
-    } else {
-      return 'Underweight';
-    }
-  }
+
 
   // get result ends here
   // get interpretation
   String getInterpretation() {
     if (_bmi! >= 25) {
-      return 'You have a higher than normal body weight. Try to exercise more.';
+      return 'You have a higher than normal body weight.';
     } else if (_bmi! >= 18.5) {
-      return 'You have a normal body weight. Good job!';
+      return 'You have a normal body weight.';
     } else {
-      return 'You have a lower than normal body weight. You can eat a bit more.';
+      return 'You have a lower than normal body weight.';
     }
   }
 // get interpretation ends here

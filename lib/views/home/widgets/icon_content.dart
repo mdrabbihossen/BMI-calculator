@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-
-
 Widget iconContent({
   required IconData icon,
   required String iconText,

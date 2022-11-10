@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
 // colors
-Color kBackgroundColor = Color(0xff0a0e21);
-Color kActiveCardColor = Color(0xff1d1e33);
-Color kInactiveCardColor = Color(0xff111328);
-Color kCustomButtonColor = Color(0xffe81555);
-
+Color kBackgroundColor = Color(0xfffff6f9);
+Color kActiveCardColor = Color(0xffFFD7E7);
+Color kInactiveCardColor = Color(0xffFFD7E7);
+Color kCustomButtonColor = Color(0xffFF3880);
+Color kPrimaryColor = Color(0xffFF3880);
 // textStyle
 TextStyle kLabelTextStyle = TextStyle(
   fontSize: 18,
