@@ -16,7 +16,7 @@ class CalculatorModel {
     return _bmi!.toStringAsFixed(1);
   }
 
-// calculate bmi ends here
+  // calculate bmi ends here
 
 
   // get result ends here

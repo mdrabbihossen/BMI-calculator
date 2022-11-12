@@ -59,14 +59,18 @@ class ResultScreen extends StatelessWidget {
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 18,
-                      color: Colors.green,
+                      color: interpretation.contains('lower')
+                          ? Colors.red
+                          : Colors.green,
                       fontWeight: FontWeight.w600,
                     ),
                   ),
                   Spacer(),
                   Padding(
                     padding: const EdgeInsets.symmetric(
-                        horizontal: 45.0, vertical: 15),
+                      horizontal: 45.0,
+                      vertical: 15,
+                    ),
                     child: TextButton(
                       onPressed: () {},
                       child: Text(
